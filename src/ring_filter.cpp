@@ -17,14 +17,14 @@ void RingFilter::scanCallback(const sensor_msgs::PointCloud2ConstPtr& msg) {
 
   pcl::fromROSMsg(*msg, *cloud);
 
-  std::cout << pcl::getFieldsList(*msg) << std::endl;
   for (auto& it : cloud->points) {
-    if (it.ring == 1 || it.ring == 2 || it.ring == 3 || it.ring == 4 ||
-        it.ring == 5 || it.ring == 6 || it.ring == 8 || it.ring == 9 ||
-        it.ring == 11 || it.ring == 12 || it.ring == 14 || it.ring == 15 ||
-        it.ring == 16 || it.ring == 17 || it.ring == 18 || it.ring == 19) {
+    if (it.ring == 31 || it.ring == 30 || it.ring == 29 || it.ring == 28 ||
+        it.ring == 27 || it.ring == 26 || it.ring == 24 || it.ring == 23 ||
+        it.ring == 21 || it.ring == 20 || it.ring == 18 || it.ring == 17 ||
+        it.ring == 16 || it.ring == 15 || it.ring == 14 || it.ring == 13) {
       output_cloud->points.push_back(it);
     }
+ 
   }
 
   output_cloud->header = cloud->header;
